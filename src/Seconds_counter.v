@@ -1,7 +1,6 @@
 module Seconds_counter (
     input wire clk,
     input wire rst_n,
-    input wire tick_1s,
     input wire up,
     input wire down,
     input wire mode,
@@ -57,7 +56,7 @@ module Seconds_counter (
                 end
             end
             else begin
-                if (tick_1s) begin
+                if (up) begin
                     if (second_ones == 4'd9 && second_tens == 4'd5) begin
                         second_ones <= 4'd0;
                         second_tens <= 4'd0;
