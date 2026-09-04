@@ -29,7 +29,7 @@ module Days_counter (
             tick_mo_down <= 1'd0;
 
             if (mode) begin
-                if (day_ones > max_day_ones || day_tens > max_day_tens) begin
+                if ((day_tens > max_day_tens) || ((day_tens == max_day_tens) && (day_ones > max_day_ones))) begin
                     day_ones <= max_day_ones;
                     day_tens <= max_day_tens;
                 end
